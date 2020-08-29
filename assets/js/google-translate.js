@@ -7,7 +7,7 @@
 
 
 const googleTranslateConfig = {
-    lang: "en",
+    lang: "ru",
 };
 
 function TranslateInit() {
