@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Переводчик googleTranslate для версий сайта</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="files/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="files/translate.data.js"></script>
+    <script src="files/translate.data.list.js"></script>
+    <link rel="stylesheet" href="files/translator.scss.css">
+    
+</head>
+
+<body>    
+    <section class="content">
+        <h1 class="content__title skiptranslate">Машинный перевод локализации сайта</h1>
+        <div class="instruction skiptranslate">
+            <h2>Инструкция по работе с переводчиком</h2>
+            Перевод текста осуществляется на основе машинного перевода гугл поэтому местами может быть далеко не точен. Альтернативы пока к сожалению нет.<br/> 
+            Для осуществления перевода необходимо выбрать нужный язык из имеющихся в списке иконок либо же в плавающей панели переводчика.<br/>  
+            После выбора языка необходимо дождаться когда полоска станет зеленой почти полностью.<br/>
+            Далее необходимо нажать кнопку "Подготовить текст к копированию" и после уже "Копировать текст". Текст скорируется в буфер обмена и можно его сразу копировать в поле локализации сайта
+            <br/><a href="https://o525.ru/GwN0-IB2MLymIucwDaD5xPbDR3E" target="_blank">Скриншот 1</a><br/>
+            <a href="https://o525.ru/CuDmWFayF6Qv7mJLJCmK1Xr2NSw" target="_blank">Скриншот 2</a><br/>
+            Текст уже подготовлен, поэтому достаточно только вставить и сохранить.
+            <a href="https://translate.google.com/intl/ru/about/languages/">Языки и префиксы</a>
+        </div>
+        <main class="content-text">
+            <div class="language skiptranslate">
+                <item_select_list v-for="item in item_select_list" v-bind:item="item"></item_select_list>
+            </div>
+            <div class="translate-js-wr" >
+                <list_translate v-for="item in item_list" ref="item_translate" v-bind:item="item"></list_translate>
+            </div>
+            <div class="text-is-reading">
+                <span class="skiptranslate">{{text_translate_label}}</span>
+            </div>
+            <div class="pop-copy-done skiptranslate" v-show="popup_done">
+                Текст скопирован в буфер обмена
+            </div>
+            <div class="light-panel">
+                <div class="w100">
+                    <textarea id="afterCopyText" ref="copytext" cols="30" rows="10" v-model="afterCopy"></textarea>
+                </div>
+                <button class="btn btn-secondary after-translate skiptranslate" @click="translateChange">Подготовить текст к копированию</button>
+                <button class="after-translate btn btn-secondary skiptranslate" @click="translateCopy" :class="{'btn-success':copy_done}">Копировать текст</button>
+                
+            </div>
+            
+        </main>
+        
+    </section>
+    <footer>
+        
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="files/google-translate.js"></script>
+</body>
+
+</html>
