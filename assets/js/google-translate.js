@@ -7,7 +7,7 @@
 
 
 const googleTranslateConfig = {
-    lang: "ru",
+    lang: "en",
 };
 
 function TranslateInit() {
@@ -172,3 +172,4 @@ function is_translate(){
   		'found_yes' : found_yes
   	}
 }
+
