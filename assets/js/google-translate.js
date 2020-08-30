@@ -65,7 +65,7 @@ new Vue({
 		afterCopy : '',
 		translated : {},
 		copy_done : false,
-		popup_done : false,
+		popup_done : true,
 		text_translate_label : 'Идет перевод текста'
 	},
 	methods: {
@@ -85,17 +85,17 @@ new Vue({
 				let text_tr = '';
 			  	this.afterCopy = list();
 			  	this.copy_done = false;
-			  	this.popup_done = false;
+			  	this.popup_done = true;
 			}
 
 		},
 		pop_done : function(){
-			this.popup_done = true;
+			this.popup_done = false;
 			let intr;
             let self = this;
             clearTimeout(intr);
 		    intr = setTimeout(function(){
-		        self.popup_done = false;
+		        self.popup_done = true;
 		        self.copy_done = false;
 		    },2000);
 		},

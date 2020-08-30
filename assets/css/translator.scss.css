@@ -117,7 +117,7 @@ body {
   border: 2px solid #0d5635;
   transform: translateX(-50%);
   font-size: 17px;
-  display: none;
+  
 }
   .pop-copy-done:before {
     content: "";
@@ -127,7 +127,7 @@ body {
     top: -50px;
     width: 70px;
     height: 70px;
-    background: url(fal_icon.png) 6px 14px no-repeat #fff;
+    background: url(../images/fal_icon.png) 6px 14px no-repeat #fff;
     border-radius: 100%;
     background-size: 104%;
     border: 2px solid #0d5635; }
