@@ -24,7 +24,7 @@ function TranslateInit() {
     // Инициализируем виджет с языком по умолчанию
     new google.translate.TranslateElement({
         pageLanguage: googleTranslateConfig.lang,
-    }, 'translate_element');
+    });
 
     // Вешаем событие  клик на флаги
     $('[data-google-lang]').click(function () {
